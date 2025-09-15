@@ -129,7 +129,7 @@ export default function Teleconsultation() {
                       <SelectValue placeholder="Choose specialty" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All Specialties</SelectItem>
+                      <SelectItem value="all">All Specialties</SelectItem>
                       {specialties.map((specialty) => (
                         <SelectItem key={specialty.id} value={specialty.id}>
                           {specialty.name}

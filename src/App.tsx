@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { FloatingElements } from "@/components/ui/floating-elements";
 import Home from "./pages/home";
 import Register from "./pages/register";
 import Login from "./pages/login";
@@ -23,7 +24,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex min-h-screen flex-col bg-background">
+        <div className="flex min-h-screen flex-col bg-background relative">
+          <FloatingElements />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

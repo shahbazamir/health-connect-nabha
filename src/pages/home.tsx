@@ -17,10 +17,15 @@ export default function Home() {
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 sm:py-32">
+      <section className="relative overflow-hidden morphing-bg medical-pattern py-20 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-6xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <div className="mx-auto max-w-3xl text-center animate-fade-in-up">
+            <div className="pulse-ring inline-block mb-8">
+              <div className="bg-primary/20 p-4 rounded-full">
+                <Heart className="h-12 w-12 text-primary animate-glow-pulse" />
+              </div>
+            </div>
+            <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-6xl bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               Healthcare Without Boundaries
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
@@ -41,9 +46,14 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Background decoration */}
-        <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
-          <div className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-primary to-secondary opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" />
+        {/* Background decoration with floating elements */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-xl float"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-accent/30 to-primary/30 rounded-full blur-xl float-delayed"></div>
+          <div className="absolute bottom-20 left-1/4 w-28 h-28 bg-gradient-to-br from-secondary/30 to-accent/30 rounded-full blur-xl float"></div>
+          <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+            <div className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-primary to-secondary opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem] animate-morph-bg" />
+          </div>
         </div>
       </section>
 
@@ -60,10 +70,10 @@ export default function Home() {
           </div>
           
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 xl:grid-cols-4">
-            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-medical transition-all duration-300">
+            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-medical transition-all duration-500 card-3d group hover:glow-primary animate-slide-up">
               <CardHeader className="text-center">
-                <div className="mx-auto bg-primary-soft p-3 rounded-full w-fit mb-4">
-                  <Video className="h-8 w-8 text-primary" />
+                <div className="mx-auto bg-primary-soft p-3 rounded-full w-fit mb-4 group-hover:scale-110 transition-transform duration-300 pulse-ring">
+                  <Video className="h-8 w-8 text-primary group-hover:animate-glow-pulse" />
                 </div>
                 <CardTitle className="font-heading">Video Consultations</CardTitle>
                 <CardDescription>
@@ -77,10 +87,10 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-medical transition-all duration-300">
+            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-medical transition-all duration-500 card-3d group hover:glow-secondary animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <CardHeader className="text-center">
-                <div className="mx-auto bg-secondary-soft p-3 rounded-full w-fit mb-4">
-                  <Pill className="h-8 w-8 text-secondary" />
+                <div className="mx-auto bg-secondary-soft p-3 rounded-full w-fit mb-4 group-hover:scale-110 transition-transform duration-300 pulse-ring">
+                  <Pill className="h-8 w-8 text-secondary group-hover:animate-glow-pulse" />
                 </div>
                 <CardTitle className="font-heading">Medicine Availability</CardTitle>
                 <CardDescription>
@@ -94,10 +104,10 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-medical transition-all duration-300">
+            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-medical transition-all duration-500 card-3d group hover:glow-accent animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <CardHeader className="text-center">
-                <div className="mx-auto bg-accent-soft p-3 rounded-full w-fit mb-4">
-                  <Activity className="h-8 w-8 text-accent" />
+                <div className="mx-auto bg-accent-soft p-3 rounded-full w-fit mb-4 group-hover:scale-110 transition-transform duration-300 pulse-ring">
+                  <Activity className="h-8 w-8 text-accent group-hover:animate-glow-pulse" />
                 </div>
                 <CardTitle className="font-heading">AI Symptom Checker</CardTitle>
                 <CardDescription>
@@ -111,10 +121,10 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-medical transition-all duration-300">
+            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-medical transition-all duration-500 card-3d group hover:glow-primary animate-slide-up" style={{ animationDelay: '0.6s' }}>
               <CardHeader className="text-center">
-                <div className="mx-auto bg-primary-soft p-3 rounded-full w-fit mb-4">
-                  <Heart className="h-8 w-8 text-primary" />
+                <div className="mx-auto bg-primary-soft p-3 rounded-full w-fit mb-4 group-hover:scale-110 transition-transform duration-300 pulse-ring">
+                  <Heart className="h-8 w-8 text-primary group-hover:animate-glow-pulse" />
                 </div>
                 <CardTitle className="font-heading">Digital Health Records</CardTitle>
                 <CardDescription>
@@ -132,7 +142,7 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 sm:py-32 bg-muted/30">
+      <section className="py-24 sm:py-32 bg-muted/30 hexagon-pattern relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -145,9 +155,11 @@ export default function Home() {
           
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center group animate-fade-in-up"  style={{ animationDelay: '0.2s' }}>
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
-                  <Users className="h-5 w-5 flex-none text-primary" />
+                  <div className="pulse-ring">
+                    <Users className="h-5 w-5 flex-none text-primary group-hover:animate-glow-pulse" />
+                  </div>
                   24/7 Doctor Availability
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
@@ -155,9 +167,11 @@ export default function Home() {
                 </dd>
               </div>
               
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
-                  <Smartphone className="h-5 w-5 flex-none text-secondary" />
+                  <div className="pulse-ring">
+                    <Smartphone className="h-5 w-5 flex-none text-secondary group-hover:animate-glow-pulse" />
+                  </div>
                   Mobile-First Design
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
@@ -165,9 +179,11 @@ export default function Home() {
                 </dd>
               </div>
               
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center group animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
-                  <Shield className="h-5 w-5 flex-none text-accent" />
+                  <div className="pulse-ring">
+                    <Shield className="h-5 w-5 flex-none text-accent group-hover:animate-glow-pulse" />
+                  </div>
                   Secure & Private
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
